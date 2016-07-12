@@ -17,16 +17,30 @@ public abstract class Pet implements Serializable
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    protected String id;
+    protected Long id;
 
     protected String name;
 
-    public String getId()
+    protected String color;
+
+    public Pet()
+    {
+        super();
+    }
+
+    public Pet(String name, String color)
+    {
+        super();
+        this.name = name;
+        this.color = color;
+    }
+
+    public Long getId()
     {
         return id;
     }
 
-    public void setId(String id)
+    public void setId(Long id)
     {
         this.id = id;
     }
@@ -39,5 +53,15 @@ public abstract class Pet implements Serializable
     public void setName(String name)
     {
         this.name = name;
+    }
+
+    public String getColor()
+    {
+        return color;
+    }
+
+    public void setColor(String color)
+    {
+        this.color = color;
     }
 }
